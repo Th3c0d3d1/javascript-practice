@@ -37,9 +37,33 @@ const characters = [
 
 //***REDUCE***
 //1. Get total mass of all characters
+const totalMass = characters.reduce((acc, cur) => {
+    return acc + cur.mass;
+} , 0)
+console.log(totalMass);
+
 //2. Get total height of all characters
+const totalHeight = characters.reduce((acc, cur) => {
+    return acc + cur.height;
+})
+
 //3. Get total number of characters by eye color
+const charactersByEyeColor = characters.reduce((acc, cur) =>{
+    const color = cur.eye_color; // <--- assigns var name to an object
+    if(acc[color]) { 
+        acc[color]++;
+    } // if the accumulator has already seen that eye color before, then increase it by one
+    else {
+        acc[color] = 1;
+    }
+    // otherwise set the accumulator to 1 (meaning we've seen )
+    return acc;
+}, {}) // }, {}) <--- gives an initial value of an empty object
+console.log(charactersByEyeColor);
+
 //4. Get total number of characters in all the character names
+const totalNameCharacters = characters.reduce((acc, cur) => acc + cur.name.length, 0);
+console.log(totalNameCharacters);
 
 //***FILTER***
 //1. Get characters with mass greater than 100
