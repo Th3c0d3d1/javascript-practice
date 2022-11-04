@@ -31,9 +31,22 @@ const characters = [
 
 //***MAP***
 //1. Get array of all names
+const name = characters.map((character) => character.name)
+console.log(name);
+
 //2. Get array of all heights
+const heights = characters.map((character) => character.height);
+console.log(heights);
+
 //3. Get array of objects with just name and height properties
+const minifiedRecords = characters.map((character) => ({
+    name: character.name,
+    height: character.height,
+}));
+console.log(minifiedRecords);
 //4. Get array of all first names
+const firstNames = characters.map((character) => character.name.split(" ")[0]);
+console.log(firstNames);
 
 //***REDUCE***
 //1. Get total mass of all characters
@@ -63,6 +76,7 @@ console.log(charactersByEyeColor);
 
 //4. Get total number of characters in all the character names
 const totalNameCharacters = characters.reduce((acc, cur) => acc + cur.name.length, 0);
+// the length of the name will be added onto the accumulator, with the initial value being 0
 console.log(totalNameCharacters);
 
 //***FILTER***
