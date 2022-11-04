@@ -31,8 +31,10 @@ const characters = [
 
 //***MAP***
 //1. Get array of all names
-const name = characters.map((character) => character.name)
-console.log(name);
+const getname = characters.map((character) => character.name) 
+// map function will take callback function(defined parameter as character) 
+// and transform it into 
+console.log(getname);
 
 //2. Get array of all heights
 const heights = characters.map((character) => character.height);
