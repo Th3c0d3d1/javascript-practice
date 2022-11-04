@@ -32,8 +32,8 @@ const characters = [
 //***MAP***
 //1. Get array of all names
 const getname = characters.map((character) => character.name) 
-// map function will take callback function(defined parameter as character) 
-// and transform it into 
+//  map function will take callback function(defined parameter as character) 
+//  and transform it into wanted item(character.name) in new array
 console.log(getname);
 
 //2. Get array of all heights
@@ -45,9 +45,11 @@ const minifiedRecords = characters.map((character) => ({
     name: character.name,
     height: character.height,
 }));
+// {} <--- denotes object
 console.log(minifiedRecords);
 //4. Get array of all first names
 const firstNames = characters.map((character) => character.name.split(" ")[0]);
+// split <-- splits the array by spaces (" ") assuming matching format 
 console.log(firstNames);
 
 //***REDUCE***
@@ -83,7 +85,16 @@ console.log(totalNameCharacters);
 
 //***FILTER***
 //1. Get characters with mass greater than 100
+const greaterThan100Characters = characters.filter(
+    (character) => character.mass > 100
+);
+console.log(greaterThan100Characters);
+
 //2. Get characters with height less than 200
+const heightLessThan200 = characters.filter(
+    (character) => character.height < 200
+);
+console.log(heightLessThan200);
 //3. Get all male characters
 //4. Get all female characters
 
