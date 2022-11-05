@@ -30,6 +30,7 @@ const characters = [
 ];
 
 //***MAP***
+
 //1. Get array of all names
 const getname = characters.map((character) => character.name) 
 //  map function will take callback function(defined parameter as character) 
@@ -53,6 +54,7 @@ const firstNames = characters.map((character) => character.name.split(" ")[0]);
 console.log(firstNames);
 
 //***REDUCE***
+
 //1. Get total mass of all characters
 const totalMass = characters.reduce((acc, cur) => {
     return acc + cur.mass;
@@ -84,6 +86,7 @@ const totalNameCharacters = characters.reduce((acc, cur) => acc + cur.name.lengt
 console.log(totalNameCharacters);
 
 //***FILTER***
+
 //1. Get characters with mass greater than 100
 const greaterThan100Characters = characters.filter(
     (character) => character.mass > 100
@@ -96,12 +99,35 @@ const heightLessThan200 = characters.filter(
 );
 console.log(heightLessThan200);
 //3. Get all male characters
+const maleCharacters = character.filter(
+    (character) == character.gender === 'male'
+);
+console.log(maleCharacters);
 //4. Get all female characters
+const femaleCharacters = character.filter(
+    (character) == character.gender === 'female'
+);
+console.log(femaleCharacters);
 
 //***SORT***
+
 //1. Sort by mass
+const byMass = characters.sort((a,b) => {
+    return b.mass - a.mass; // (b - a) function using a sort method, displays numbers in descending order
+});
+console.log(byMass);
+
 //2. Sort by height
+const byHeight = characters.sort((a,b) => {
+    return a.height - b.mass; // (a - b) function using a sort method, displays numbers in ascending order
+});
+console.log(byHeight);
+
 //3. Sort by name
+const byName = characters.sort((a,b) => {
+    return a.name - b.name;
+});
+console.log(byName);
 //4. Sort by gender
 
 //***EVERY***
